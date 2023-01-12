@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# To run npm i, call the script like this: clonedev i
+clear
+
+# If the branch is not set by the user, it will use the date and time to create the directory.
+branch="$(date +'%d-%m-%Y-%I-%M-%S-%s')"
+
+if [ $1 != 'i' ]
+then
+branch=$1
+fi
+
+mkdir $branch
+cd $branch
+
+echo Your new branch will be located at: $(PWD)
+echo
+echo
+echo
+echo
+echo Cloning Dev Repo...
+echo
+git clone https://Add-your-repo-here
+echo
+cd compass-ui
+echo
+echo Creating branch $branch
+git checkout -b $branch
+echo
+echo
+if [[ $2 = 'i' || $2 = 'install' || $1 = 'i' ]]
+then
+echo Running NPM Install...
+npm i
+echo
+echo
+fi
+echo
+echo Done.
