@@ -112,6 +112,8 @@ alias cobr='echo git checkout $branch && git checkout $branch'
 alias pulldev='echo git pull origin dev && git pull origin dev'
 alias pushdev='echo git push origin HEAD && git push origin HEAD'
 alias build='echo npm run buildAll && npm run buildAll'
+alias stash='echo stash && git stash'
+alias pop='echo stash pop && git stash pop'
 
 
 
